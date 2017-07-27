@@ -1,19 +1,27 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//Pages
 import { HomePage } from '../pages/home/home';
+
+//Animated Splash Screen
+import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated-splash-screen';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
+  modalCtrl: ModalController) {
     platform.ready().then(() => {
-      statusBar.backgroundColorByHexString('#42afdd');
-      this._hideSplashScreen(splashScreen)
+      let animatedSplash = modalCtrl.create(AnimatedSplashScreen);
+
+      statusBar.backgroundColorByHexString('#42c6dd');
+      animatedSplash.present();
     });
   }
 

@@ -1,25 +1,29 @@
 page-home {
-
-    .header {
-        .toolbar {
-            min-height: 70px;
-        }
-    }
-
     .content {
-        .button {
-            box-shadow: none;
-            height: 150px;   
-            
-            .icon {
-                font-size: 65px;
-            }
 
-            p {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
+        .scroll-content {
+            padding: 0 !important;
+        }
+
+        .col {
+
+            padding: 0;
+
+            .button {
+                box-shadow: none;
+                margin: 0;
+                height: 31vh;   
+                
+                .icon {
+                    font-size: 80px;
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
             }
         }
     }
