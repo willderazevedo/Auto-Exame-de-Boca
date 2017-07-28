@@ -20,7 +20,7 @@ export class MyApp {
     platform.ready().then(() => {
       let animatedSplash = modalCtrl.create(AnimatedSplashScreen);
 
-      statusBar.backgroundColorByHexString('#42c6dd');
+      statusBar.backgroundColorByHexString('#ff6535');
       animatedSplash.present();
     });
   }

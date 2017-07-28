@@ -36,12 +36,22 @@ page-animated-splash-screen {
             animation-fill-mode: forwards;
         }
 
-        .cls-5, .cls-6 {
+
+    }
+
+    .initials {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        font-size: 80px;
+        font-weight: 400;
+        color: #282828;
+
+        .letters {
             opacity: 0;
             animation: 2s 1.5s linear fadeIn;
             animation-fill-mode: forwards;
         }
-
     }
 }
 
