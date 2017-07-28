@@ -1,8 +1,8 @@
 {
-  "name": "ionic-hello-world",
-  "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "auto-exame-de-boca",
+  "version": "0.0.1",
+  "author": "Willder Azevedo",
+  "homepage": "http://github.com/willderazevedo",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
