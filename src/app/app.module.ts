@@ -8,6 +8,10 @@ import { MyApp } from './app.component';
 
 //Pages
 import { HomePage } from '../pages/home/home';
+import { AboutAppPage } from '../pages/about-app/about-app';
+
+//Global Providers
+import { GlobalService } from './../providers/global-service';
 
 //Splash Screen Page
 import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated-splash-screen';
@@ -16,6 +20,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
   declarations: [
     MyApp,
     HomePage,
+    AboutAppPage,
     AnimatedSplashScreen
   ],
   imports: [
@@ -26,11 +31,13 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
   entryComponents: [
     MyApp,
     HomePage,
+    AboutAppPage,
     AnimatedSplashScreen
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    GlobalService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

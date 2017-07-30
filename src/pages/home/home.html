@@ -15,7 +15,11 @@
       </button> 
     </ion-col>
     <ion-col col-6>
-      <button ion-button full color="button-lighten-orange">
+      <button 
+        ion-button 
+        full 
+        color="button-lighten-orange"
+        (click)="global.pageNavigation(aboutApp, {childColor: 'button-lighten-orange'}, true)">
         <ion-icon name="md-help"></ion-icon>
         <p>Oque é o Autoexame?</p>
       </button> 

@@ -24,15 +24,5 @@ export class MyApp {
       animatedSplash.present();
     });
   }
-
-  /**
-   * Fix da tela branca na tela de load
-   * @param {SplashScreen} splashScreen Biblioteca nativa responsável pelo controle da tela de splash
-   */
-  private _hideSplashScreen(splashScreen) {
-    setTimeout(() => {
-      splashScreen.hide();
-    }, 100);
-  }
 }
 

@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+
+//Global Providers
+import { GlobalService } from './../../providers/global-service';
+
+//Pages
+import { AboutAppPage } from './../about-app/about-app';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +12,8 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  aboutApp = AboutAppPage;
 
-  }
+  constructor(public global: GlobalService) {}
 
 }
