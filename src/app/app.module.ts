@@ -14,6 +14,9 @@ import { DoctorAreaPage } from './../pages/doctor-area/doctor-area';
 import { AboutUsPage } from './../pages/about-us/about-us';
 import { HelpMapPage } from './../pages/help-map/help-map';
 
+//Template Pages
+import { HelpMapModalPage } from './../pages/help-map-modal/help-map-modal';
+
 //Components
 import { MapComponent } from './../components/map/map';
 
@@ -32,6 +35,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     DoctorAreaPage,
     AboutUsPage,
     HelpMapPage,
+    HelpMapModalPage,
     AnimatedSplashScreen,
     MapComponent
   ],
@@ -51,6 +55,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     DoctorAreaPage,
     AboutUsPage,
     HelpMapPage,
+    HelpMapModalPage,
     AnimatedSplashScreen
   ],
   providers: [
