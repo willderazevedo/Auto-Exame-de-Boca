@@ -47,15 +47,23 @@
 
   <ion-row>
     <ion-col col-6>
-      <button ion-button full color="button-dark-orange">
+      <button 
+        ion-button
+        full 
+        color="button-dark-orange"
+        (click)="global.pageNavigation(doctorArea, {childColor: 'button-dark-orange'}, true)">
         <ion-icon name="md-pulse"></ion-icon>
         <p>Sou Dentista</p>
       </button> 
     </ion-col>
     <ion-col col-6>
-      <button ion-button full color="button-darken-orange">
+      <button 
+        ion-button 
+        full 
+        color="button-darken-orange"
+        (click)="global.pageNavigation(aboutUs, {childColor: 'button-darken-orange'}, true)">
         <ion-icon name="md-medical"></ion-icon>
-        <p>Sobre nós</p>
+        <p>Sobre mim</p>
       </button> 
     </ion-col>
   </ion-row>

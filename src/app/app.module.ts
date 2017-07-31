@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutAppPage } from '../pages/about-app/about-app';
 import { OrientationsPage } from './../pages/orientations/orientations';
+import { DoctorAreaPage } from './../pages/doctor-area/doctor-area';
+import { AboutUsPage } from './../pages/about-us/about-us';
 
 //Global Providers
 import { GlobalService } from './../providers/global-service';
@@ -23,6 +25,8 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     HomePage,
     AboutAppPage,
     OrientationsPage,
+    DoctorAreaPage,
+    AboutUsPage,
     AnimatedSplashScreen
   ],
   imports: [
@@ -38,6 +42,8 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     HomePage,
     AboutAppPage,
     OrientationsPage,
+    DoctorAreaPage,
+    AboutUsPage,
     AnimatedSplashScreen
   ],
   providers: [

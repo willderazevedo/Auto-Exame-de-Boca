@@ -1,9 +1,12 @@
 page-about-app {
 
+    .scroll-content {
+        padding: 0 !important;
+    }
+
     .banner {
         width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
+        height: 225px;
 
         img {
             width: 100%;
@@ -12,6 +15,8 @@ page-about-app {
     }
 
     .text-content {
+        padding: 16px;
+
         h2 {
             font-size: 20px;
         }
