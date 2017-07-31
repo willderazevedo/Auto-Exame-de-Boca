@@ -22,20 +22,9 @@ export class MyApp {
       let animatedSplash = modalCtrl.create(AnimatedSplashScreen);
 
       statusBar.backgroundColorByHexString('#ff6535');
+      this._backButtonHardwareAction(platform);
       animatedSplash.present();
     });
-  }
-<<<<<<< HEAD
-=======
-
-  /**
-   * Fix da tela branca na tela de load
-   * @param {SplashScreen} splashScreen Biblioteca nativa responsável pelo controle da tela de splash
-   */
-  private _hideSplashScreen(splashScreen) {
-    setTimeout(() => {
-      splashScreen.hide();
-    }, 100);
   }
 
   /**
@@ -82,6 +71,5 @@ export class MyApp {
       }).present();
     });
   }
->>>>>>> feat(global): função do back button do hardware
 }
 
