@@ -28,7 +28,11 @@
 
   <ion-row>
     <ion-col col-6>
-      <button ion-button full color="button-light-orange">
+      <button 
+        ion-button 
+        full 
+        color="button-light-orange"
+        (click)="global.pageNavigation(orientations, {childColor: 'button-light-orange'}, true)">
         <ion-icon name="md-medkit"></ion-icon>
         <p>Orientações</p>
       </button> 

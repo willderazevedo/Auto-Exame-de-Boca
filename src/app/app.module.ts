@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 //Pages
 import { HomePage } from '../pages/home/home';
 import { AboutAppPage } from '../pages/about-app/about-app';
+import { OrientationsPage } from './../pages/orientations/orientations';
 
 //Global Providers
 import { GlobalService } from './../providers/global-service';
@@ -21,17 +22,22 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     MyApp,
     HomePage,
     AboutAppPage,
+    OrientationsPage,
     AnimatedSplashScreen
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      pageTransition: 'ios-transition',
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     AboutAppPage,
+    OrientationsPage,
     AnimatedSplashScreen
   ],
   providers: [

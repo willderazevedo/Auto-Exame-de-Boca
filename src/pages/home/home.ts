@@ -5,6 +5,7 @@ import { GlobalService } from './../../providers/global-service';
 
 //Pages
 import { AboutAppPage } from './../about-app/about-app';
+import { OrientationsPage } from './../orientations/orientations';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,8 @@ import { AboutAppPage } from './../about-app/about-app';
 })
 export class HomePage {
 
-  aboutApp = AboutAppPage;
+  aboutApp     = AboutAppPage;
+  orientations = OrientationsPage;
 
   constructor(public global: GlobalService) {}
 
