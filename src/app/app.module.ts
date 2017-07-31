@@ -13,6 +13,7 @@ import { OrientationsPage } from './../pages/orientations/orientations';
 import { DoctorAreaPage } from './../pages/doctor-area/doctor-area';
 import { AboutUsPage } from './../pages/about-us/about-us';
 import { HelpMapPage } from './../pages/help-map/help-map';
+import { ExamPage } from './../pages/exam/exam';
 
 //Template Pages
 import { HelpMapModalPage } from './../pages/help-map-modal/help-map-modal';
@@ -36,6 +37,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     AboutUsPage,
     HelpMapPage,
     HelpMapModalPage,
+    ExamPage,
     AnimatedSplashScreen,
     MapComponent
   ],
@@ -56,6 +58,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     AboutUsPage,
     HelpMapPage,
     HelpMapModalPage,
+    ExamPage,
     AnimatedSplashScreen
   ],
   providers: [

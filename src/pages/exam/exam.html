@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="{{ childColor }}">
+    <ion-title>Fazer Autoexame</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="tutorial" *ngIf="tutorialOn">
+    <h2>Vamos seguir estes passos antes de começar</h2>
+    <ol>
+      <li>Lave bem a boca</li>
+      <li>Remova protéses dentárias se houver alguma</li>
+      <li>Procure por um local bem iluminado</li>
+      <li>Fique de frente a um espelho neste mesmo local</li>
+    </ol>
+    <button ion-button full color="{{ childColor }}" (click)="tutorialOn=!tutorialOn">
+      Tudo pronto, vamos começar
+    </button>
+  </div>
+
+  <div class="exam" *ngIf="!tutorialOn">
+    Fotos para comparação aki
+
+    <div class="answers">
+      Lista de perguntas aki  
+    </div>
+  </div>
+</ion-content>
