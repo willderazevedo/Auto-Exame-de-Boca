@@ -8,6 +8,7 @@ import { AboutAppPage } from './../about-app/about-app';
 import { OrientationsPage } from './../orientations/orientations';
 import { DoctorAreaPage } from './../doctor-area/doctor-area';
 import { AboutUsPage } from './../about-us/about-us';
+import { HelpMapPage } from './../help-map/help-map';
 
 @Component({
   selector: 'page-home',
@@ -19,6 +20,7 @@ export class HomePage {
   orientations = OrientationsPage;
   doctorArea   = DoctorAreaPage;
   aboutUs      = AboutUsPage;
+  helpMap      = HelpMapPage;
 
   constructor(public global: GlobalService) {}
 

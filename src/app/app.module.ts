@@ -12,6 +12,10 @@ import { AboutAppPage } from '../pages/about-app/about-app';
 import { OrientationsPage } from './../pages/orientations/orientations';
 import { DoctorAreaPage } from './../pages/doctor-area/doctor-area';
 import { AboutUsPage } from './../pages/about-us/about-us';
+import { HelpMapPage } from './../pages/help-map/help-map';
+
+//Components
+import { MapComponent } from './../components/map/map';
 
 //Global Providers
 import { GlobalService } from './../providers/global-service';
@@ -27,7 +31,9 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     OrientationsPage,
     DoctorAreaPage,
     AboutUsPage,
-    AnimatedSplashScreen
+    HelpMapPage,
+    AnimatedSplashScreen,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     OrientationsPage,
     DoctorAreaPage,
     AboutUsPage,
+    HelpMapPage,
     AnimatedSplashScreen
   ],
   providers: [

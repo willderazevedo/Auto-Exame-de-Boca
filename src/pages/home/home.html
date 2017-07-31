@@ -38,7 +38,11 @@
       </button> 
     </ion-col>
     <ion-col col-6>
-      <button ion-button full color="button-orange">
+      <button
+        ion-button
+        full
+        color="button-orange"
+        (click)="global.pageNavigation(helpMap, {childColor: 'button-orange'}, true)">
         <ion-icon name="md-pin"></ion-icon>
         <p>Ajuda Próxima</p>
       </button> 
