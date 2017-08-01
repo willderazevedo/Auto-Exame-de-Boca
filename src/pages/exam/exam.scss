@@ -5,8 +5,53 @@ page-exam {
             font-size: 18px;
         }
 
-        ul>li {
+        ol>li {
             font-size: 15px;
+        }
+    }
+
+    .exam {
+
+        h2 {
+            border-top: 1xp solid #ddd;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .comparation .col {
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            .card {
+                margin: 0 0 13px 0;
+                width: 100%;
+            }
+        }
+
+        .answers {
+
+            h3 {
+                font-size: 15px;
+                margin: 15px 0;
+            }
+
+            .col {
+                padding: 0;
+
+                .item {
+                    padding-left: 0;
+
+                    .item-inner {
+                        border-bottom: 0; 
+                    }
+                }
+            }
         }
     }
 }

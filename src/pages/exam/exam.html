@@ -11,7 +11,8 @@
       <li>Lave bem a boca</li>
       <li>Remova protéses dentárias se houver alguma</li>
       <li>Procure por um local bem iluminado</li>
-      <li>Fique de frente a um espelho neste mesmo local</li>
+      <li>Fique com o celular em mãos para tirar as fotos</li>
+      <li>Siga as instruções</li>
     </ol>
     <button ion-button full color="{{ childColor }}" (click)="tutorialOn=!tutorialOn">
       Tudo pronto, vamos começar
@@ -19,10 +20,183 @@
   </div>
 
   <div class="exam" *ngIf="!tutorialOn">
-    Fotos para comparação aki
+    <ion-row class="comparation">
+      <ion-col col-6>
+        <ion-card>
+          <img src="./assets/images/smile.jpg"/>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card>
+          <img src="./assets/images/default-image.jpg"/>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <p>
+      <strong>Obs:</strong> Aperte no quadro direito para tirar uma foto, 
+      ela deve ficar parecida com a foto da esquerda.
+    </p>
+
+    <h2>
+      Responda as perguntas relacionadas a região da boca na foto
+    </h2>
 
     <div class="answers">
-      Lista de perguntas aki  
+
+      <div radio-group>
+        <h3>1 - Há alguma mudança na cor da pele ou mucosas?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>2 - Há alguma parte endurecida?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>3 - Há algum caroço ou abcesso?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>4 - Tem alguma ferida que não cicatriza a mais de 14 dias?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>5 - Há algum inchaço?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>6 - Existe alguma área dormente?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>7 - Um ou mais dente(s) amolecido(s)?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div radio-group>
+        <h3>8 - Você tem alguma dificuldade em engolir, falar ou mastigar?</h3>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label>Sim</ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-item>
+              <ion-label>Não</ion-label>
+              <ion-radio value="0"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
     </div>
+
+    <button ion-button full color="{{ childColor }}">Próximo</button>
   </div>
 </ion-content>

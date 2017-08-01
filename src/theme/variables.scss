@@ -54,14 +54,14 @@ $colors: (
 // iOS only Sass variables can go here
 $alert-ios-button-text-color: map-get($colors, 'button-lighten-orange');
 $searchbar-ios-background-color: map-get($colors, 'button-orange'); 
-
+$radio-ios-color-on: map-get($colors, 'button-lighten-orange');
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 $alert-md-button-text-color: map-get($colors, 'button-lighten-orange');
 $searchbar-md-background-color: map-get($colors, 'button-orange'); 
-
+$radio-md-color-on: map-get($colors, 'button-lighten-orange');
 
 
 // App Windows Variables
