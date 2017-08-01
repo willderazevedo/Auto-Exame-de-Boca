@@ -52,14 +52,15 @@ $colors: (
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-$alert-ios-button-text-color:#ff784e;
-
+$alert-ios-button-text-color: map-get($colors, 'button-lighten-orange');
+$searchbar-ios-background-color: map-get($colors, 'button-orange'); 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-$alert-md-button-text-color:#ff784e;
+$alert-md-button-text-color: map-get($colors, 'button-lighten-orange');
+$searchbar-md-background-color: map-get($colors, 'button-orange'); 
 
 
 

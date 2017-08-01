@@ -7,16 +7,24 @@
       </button>
     </ion-buttons>
   </ion-navbar>
+  <ion-toolbar color="button-orange">
+    <ion-searchbar (ionInput)="filterCities($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card no-margin>
+  <ion-card *ngFor="let item of ufHospitals">
     <ion-card-header color="button-orange">
-      Nome da cidade
+      {{ item.city }}
     </ion-card-header>
     <hr>
     <ion-card-content>
-      Lista de hospitais aqui
+
+      <ion-list no-lines text-wrap>
+        <ion-item *ngFor="let subitem of item.hospitals">
+          {{ subitem.name }}
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
 </ion-content>
