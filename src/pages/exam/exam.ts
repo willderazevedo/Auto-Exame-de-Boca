@@ -115,8 +115,6 @@ export class ExamPage {
       });
     });
 
-    console.log(this.savedQuestions);
-
     calc = (yesCount * 100)/totalQuestions;
 
     if (calc == 0) {
@@ -155,6 +153,8 @@ export class ExamPage {
     keys.forEach((key, index) => {
       choosedQuestions[key] = "";
     });
+
+    this.tookPhoto = "";
   }
 
   public doItAgain() {
