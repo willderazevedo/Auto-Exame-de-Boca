@@ -20,23 +20,96 @@
     </button>
   </div>
 
-  <div class="exam" *ngIf="!tutorialOn">
+  <div class="orientations" *ngIf="showOrientation">
+    <article>
+      <h2>Resultado</h2>
+      <p>
+        Você pode estar com um começo de cancêr de boca, sugerimos que siga a risca as orientações abaixo e 
+        só assim poderá melhorar de vez, pense em sua saúde e bem estar.
+      </p>
+      <h3>Os cuidados a serem tomados devem ser estes:</h3>
+      <ul>
+        <li>Execute o auto-exame periodicamente</li>
+        <li>Deixe de fumar caso seja um usuário tabagista</li>
+        <li>Evite bebidas alcoólicas</li>
+        <li>Proteja-se dos raios do sol (boné, chapéu, protetor solar)</li>
+        <li>Elimine fatores traumáticos na boca, como prótese mal adaptada e dentes tortos</li>
+        <li>Alimente-se de maneira saudável</li>
+        <li>Procure o cirurgião-dentista se encontrar qualquer alteração em sua boca</li>
+        <li>Escove bem os seus dentes, língua e bochecha</li>
+      </ul>
+      <p>
+        Se deseja fazer o exame novamente, pois não tem certeza, aperte no botão abaixo para refazer.
+      </p>
+      <button 
+        ion-button 
+        full 
+        color="{{ childColor }}" 
+        (click)="showOrientation=!showOrientation; doItAgain();">
+        Refazer autoexame
+      </button>
+    </article>
+  </div>
+
+  <div class="help-map" *ngIf="showHelpMap">
+    <h2>Resultado</h2>
+    <article class="help">
+      <p>
+        Seu estado é preocupante, procure o mais rápido por uma unidade médica perto de você,
+        cancêr de boca é coisa séria então você deve se cuidar o mais rápido possível.
+      </p>
+      <map></map>
+      <p>
+        Selecione seu estado no mapa acima e veja os locais de atendimento pertinho de você.
+        Mas caso queira refazer o exame para ter certeza aperte no botão abaixo.
+      </p>
+      <button 
+        ion-button 
+        full 
+        color="{{ childColor }}" 
+        (click)="showHelpMap=!showHelpMap; doItAgain();">
+        Refazer autoexame
+      </button>
+    </article>
+  </div>
+
+  <div class="ok-result" *ngIf="showOkResult">
+    <article>
+      <h2>Resultado</h2>
+      <p>
+        Meus parabéns sua boca está bem saudável, continue assim e não precisará se preocupar futuramente.
+      </p>
+      <p>
+        Se deseja fazer o exame novamente, pois não tem certeza, aperte no botão abaixo para refazer.
+      </p>
+      <button 
+        ion-button 
+        full 
+        color="{{ childColor }}" 
+        (click)="showOkResult=!showOkResult; doItAgain();">
+        Refazer autoexame
+      </button>
+    </article>
+  </div>
+
+  <div class="exam" *ngIf="!tutorialOn && !hideExam">
     <ion-row class="comparation">
       <ion-col col-6>
         <ion-card>
-          <img src="./assets/images/smile.jpg"/>
+          <img src="{{ examPhotos[actualExamPhoto] }}"/>
         </ion-card>
       </ion-col>
       <ion-col col-6>
         <ion-card>
-          <img src="./assets/images/default-image.jpg"/>
+          <img src="{{ tookPhoto ? tookPhoto : defaultPhoto }}"/>
         </ion-card>
       </ion-col>
     </ion-row>
 
     <p>
       <strong>Obs:</strong> Aperte no quadro direito para tirar uma foto, 
-      ela deve ficar parecida com a foto da esquerda.
+      ela deve ficar parecida com a foto da esquerda. A foto não é obrigatória para comparação.
+      Mas você deve observar a mesma região que e mostrada na foto.
     </p>
 
     <h2>
@@ -44,8 +117,7 @@
     </h2>
 
     <div class="answers">
-
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionOne">
         <h3>1 - Há alguma mudança na cor da pele ou mucosas?</h3>
         <ion-row>
           <ion-col>
@@ -64,7 +136,7 @@
         </ion-row>
       </div>
 
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionTwo">
         <h3>2 - Há alguma parte endurecida?</h3>
         <ion-row>
           <ion-col>
@@ -83,7 +155,7 @@
         </ion-row>
       </div>
 
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionThree">
         <h3>3 - Há algum caroço ou abcesso?</h3>
         <ion-row>
           <ion-col>
@@ -102,7 +174,7 @@
         </ion-row>
       </div>
 
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionFour">
         <h3>4 - Tem alguma ferida que não cicatriza a mais de 14 dias?</h3>
         <ion-row>
           <ion-col>
@@ -121,7 +193,7 @@
         </ion-row>
       </div>
 
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionFive">
         <h3>5 - Há algum inchaço?</h3>
         <ion-row>
           <ion-col>
@@ -140,7 +212,7 @@
         </ion-row>
       </div>
 
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionSix">
         <h3>6 - Existe alguma área dormente?</h3>
         <ion-row>
           <ion-col>
@@ -159,7 +231,7 @@
         </ion-row>
       </div>
 
-      <div radio-group>
+      <div radio-group [(ngModel)]="choosedQuestions.questionSeven">
         <h3>7 - Um ou mais dente(s) amolecido(s)?</h3>
         <ion-row>
           <ion-col>
@@ -178,8 +250,8 @@
         </ion-row>
       </div>
 
-      <div radio-group>
-        <h3>8 - Você tem alguma dificuldade em engolir, falar ou mastigar?</h3>
+      <div radio-group [(ngModel)]="choosedQuestions.questionEight">
+        <h3>8 - Você tem alguma dificuldade em engolir, falar ou mastigar nessa região?</h3>
         <ion-row>
           <ion-col>
             <ion-item>
@@ -198,6 +270,6 @@
       </div>
     </div>
 
-    <button ion-button full color="{{ childColor }}">Próximo</button>
+    <button ion-button full color="{{ childColor }}" (click)="saveQuestions()">{{ buttonText }}</button>
   </div>
 </ion-content>

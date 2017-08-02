@@ -30,7 +30,13 @@ page-exam {
 
             .card {
                 margin: 0 0 13px 0;
+                height: 100%;
                 width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
 
