@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 
+//Other Plugins
+import { Camera } from '@ionic-native/camera';
+
 //Pages
 import { HomePage } from '../pages/home/home';
 import { AboutAppPage } from '../pages/about-app/about-app';
@@ -65,6 +68,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     StatusBar,
     SplashScreen,
     GlobalService,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

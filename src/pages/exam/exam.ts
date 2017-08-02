@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavParams, ToastController, App, Content, LoadingController } from 'ionic-angular';
 
+//Other Plugins
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 @Component({
   selector: 'page-exam',
   templateUrl: 'exam.html',
@@ -52,7 +55,7 @@ export class ExamPage {
   savedQuestions   = [];
 
   constructor(public navParams: NavParams, public toastCtrl: ToastController,
-  public app: App, public loadCtrl: LoadingController) {}
+  public app: App, public loadCtrl: LoadingController, public camera: Camera) {}
 
   public saveQuestions() {
     let empty        = this._checkFields();
@@ -158,7 +161,20 @@ export class ExamPage {
     this.savedQuestions.splice(0);
     this.actualExamPhoto = 0;
     this.buttonText      = "Continuar";
+    this.tookPhoto       = "";
     this.hideExam        = false;
+  }
+
+  public choosePhoto() {
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.tookPhoto = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => console.log(err));
   }
 
   private _scrollToTop() {
