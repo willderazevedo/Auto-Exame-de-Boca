@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 
 //Other Plugins
 import { Camera } from '@ionic-native/camera';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 //Pages
 import { HomePage } from '../pages/home/home';
@@ -69,6 +70,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     SplashScreen,
     GlobalService,
     Camera,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

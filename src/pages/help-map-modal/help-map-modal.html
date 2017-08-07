@@ -21,7 +21,7 @@
     <ion-card-content>
 
       <ion-list no-lines text-wrap>
-        <ion-item *ngFor="let subitem of item.hospitals">
+        <ion-item *ngFor="let subitem of item.hospitals" (click)="searchHospital(subitem.name)">
           {{ subitem.name }}
         </ion-item>
       </ion-list>

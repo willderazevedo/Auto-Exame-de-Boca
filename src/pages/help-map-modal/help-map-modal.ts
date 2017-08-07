@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 
+//Other Plugins
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 @Component({
   selector: 'page-help-map-modal',
   templateUrl: 'help-map-modal.html',
@@ -12,7 +15,12 @@ export class HelpMapModalPage {
   ufHospitals = this.navParams.get('ufHospitals');
   auxVariable = this.navParams.get('ufHospitals');
 
-  constructor(public navParams: NavParams, public viewCtrl: ViewController) {}
+  constructor(public navParams: NavParams, public viewCtrl: ViewController,
+  public inAppBrowser: InAppBrowser) {}
+
+  public searchHospital(searchQuery) {
+    this.inAppBrowser.create("https://www.google.com/maps/search/?api=1&query=" + searchQuery, "_system");
+  }
 
   public filterCities(event) {
     let val = event.target.value;
