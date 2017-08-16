@@ -14,7 +14,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { HomePage } from '../pages/home/home';
 import { AboutAppPage } from '../pages/about-app/about-app';
 import { OrientationsPage } from './../pages/orientations/orientations';
-import { DoctorAreaPage } from './../pages/doctor-area/doctor-area';
+import { AboutCancerPage } from './../pages/about-cancer/about-cancer';
 import { AboutUsPage } from './../pages/about-us/about-us';
 import { HelpMapPage } from './../pages/help-map/help-map';
 import { ExamPage } from './../pages/exam/exam';
@@ -37,7 +37,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     HomePage,
     AboutAppPage,
     OrientationsPage,
-    DoctorAreaPage,
+    AboutCancerPage,
     AboutUsPage,
     HelpMapPage,
     HelpMapModalPage,
@@ -58,7 +58,7 @@ import { AnimatedSplashScreen } from './../pages/animated-splash-screen/animated
     HomePage,
     AboutAppPage,
     OrientationsPage,
-    DoctorAreaPage,
+    AboutCancerPage,
     AboutUsPage,
     HelpMapPage,
     HelpMapModalPage,

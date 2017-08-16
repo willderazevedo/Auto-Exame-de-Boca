@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'page-doctor-area',
-  templateUrl: 'doctor-area.html',
+  selector: 'page-about-cancer',
+  templateUrl: 'about-cancer.html',
 })
-export class DoctorAreaPage {
+export class AboutCancerPage {
 
   childColor = this.navParams.get('childColor');
 

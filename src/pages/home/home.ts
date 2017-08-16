@@ -6,7 +6,7 @@ import { GlobalService } from './../../providers/global-service';
 //Pages
 import { AboutAppPage } from './../about-app/about-app';
 import { OrientationsPage } from './../orientations/orientations';
-import { DoctorAreaPage } from './../doctor-area/doctor-area';
+import { AboutCancerPage } from './../about-cancer/about-cancer';
 import { AboutUsPage } from './../about-us/about-us';
 import { HelpMapPage } from './../help-map/help-map';
 import { ExamPage } from './../exam/exam';
@@ -19,7 +19,7 @@ export class HomePage {
 
   aboutApp     = AboutAppPage;
   orientations = OrientationsPage;
-  doctorArea   = DoctorAreaPage;
+  aboutCancer  = AboutCancerPage;
   aboutUs      = AboutUsPage;
   helpMap      = HelpMapPage;
   exam         = ExamPage;
