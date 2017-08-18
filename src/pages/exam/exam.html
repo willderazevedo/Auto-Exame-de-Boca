@@ -13,6 +13,7 @@
       <li>Procure por um local bem iluminado</li>
       <li>Fique com o celular em mãos para tirar as fotos</li>
       <li>Recomenda-se que outra pessoa ajude com as fotos</li>
+      <li>Use luvas ou lave bem as mãos</li>
       <li>Siga as instruções</li>
     </ol>
     <button ion-button full color="{{ childColor }}" (click)="tutorialOn=!tutorialOn">
@@ -93,6 +94,7 @@
   </div>
 
   <div class="exam" *ngIf="!tutorialOn && !hideExam">
+    <h2>{{ stepTitle }}</h2>
     <ion-row class="comparation">
       <ion-col col-6>
         <ion-card>
@@ -109,11 +111,11 @@
     <p>
       <strong>Obs:</strong> Aperte no quadro direito para tirar uma foto, 
       ela deve ficar parecida com a foto da esquerda. A foto não é obrigatória para comparação.
-      Mas você deve observar a mesma região que e mostrada na foto.
+      Mas você deve observar a mesma região da foto e os dois lados cima e baixo ou esquerda e direita.
     </p>
 
     <h2>
-      Responda as perguntas relacionadas a região da boca na foto
+      Responda as perguntas abaixo
     </h2>
 
     <div class="answers">

@@ -19,18 +19,13 @@ export class ExamPage {
   showHelpMap      = false;
   showOkResult     = false;
   buttonText       = "Continuar";
+  stepTitle        = "Passo 1 - Exame Extraoral";
   actualExamPhoto  = 0;
   defaultPhoto     = "./assets/images/default-image.jpg";
   tookPhoto        = "";
   examPhotos       = [
     "./assets/images/exam/exam-1.jpg",
     "./assets/images/exam/exam-2.jpg",
-    "./assets/images/exam/exam-3.jpg",
-    "./assets/images/exam/exam-4.jpg",
-    "./assets/images/exam/exam-5.jpg",
-    "./assets/images/exam/exam-6.jpg",
-    "./assets/images/exam/exam-7.jpg",
-    "./assets/images/exam/exam-8.jpg"
   ];
   questionsKeys    = [
     "questionOne", 
@@ -81,11 +76,12 @@ export class ExamPage {
     this.actualExamPhoto++;
     this._uncheckFields();
 
-    if(this.actualExamPhoto === 7) {
+    if(this.actualExamPhoto === 1) {
       this.buttonText = "Finalizar autoexame";
+      this.stepTitle  = "Passo 2 - Exame Intraoral"; 
     }
 
-    if(this.actualExamPhoto === 8) {
+    if(this.actualExamPhoto === 2) {
       this._calculateResult();
 
       return false;
@@ -93,7 +89,7 @@ export class ExamPage {
 
     this.toastCtrl.create({
       position: "bottom",
-      message:  "Etapa " + (this.actualExamPhoto) + " de 8 concluída",
+      message:  "Etapa " + (this.actualExamPhoto) + " de 2 concluída",
       duration: 1500
     }).present();
 
@@ -102,7 +98,7 @@ export class ExamPage {
 
   private _calculateResult() {
     let load           = this.loadCtrl.create({content: "Obtendo resultado..."});
-    let totalQuestions = 36;
+    let totalQuestions = 16;
     let yesCount       = 0;
     let calc           = 0;
     let keys           = this.questionsKeys;
