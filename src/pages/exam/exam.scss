@@ -18,25 +18,15 @@ page-exam {
             margin-bottom: 20px;
         }
 
-        .comparation .col {
+        .card {
+            text-align: left;
 
-            &:first-child {
-                padding-left: 0;
-            }
-
-            &:last-child {
-                padding-right: 0;
-            }
-
-            .card {
-                margin: 0 0 13px 0;
-                height: 100%;
+            img {
                 width: 100%;
+            }
 
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
+            .card-content {
+                min-height: 244px;
             }
         }
 

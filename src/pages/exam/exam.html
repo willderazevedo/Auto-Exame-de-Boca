@@ -30,15 +30,18 @@
       </p>
       <h3>Os cuidados a serem tomados devem ser estes:</h3>
       <ul>
-        <li>Execute o auto-exame periodicamente</li>
+        <li>Faça o autoexame da boca a cada seis meses</li>
         <li>Deixe de fumar caso seja um usuário tabagista</li>
         <li>Evite bebidas alcoólicas</li>
         <li>Proteja-se dos raios do sol (boné, chapéu, protetor solar)</li>
         <li>Alimente-se de maneira saudável</li>
         <li>Procure o cirurgião-dentista se encontrar qualquer alteração em sua boca</li>
         <li>Escove bem os seus dentes, língua e bochecha</li>
+        <li>Ao observar alterações na fala e na deglutição, por mais de 15 dias consecutivos, procure orientação médica e do Dentista.</li>
       </ul>
       <p>
+        Se notar alguma anormalidade, procure imediatamente um dentista ou um 
+        médico especialista (Cirurgião de Cabeça e Pescoço). Nos locais indicados no Aplicativo.
         Se deseja fazer o exame novamente, pois não tem certeza, aperte no botão abaixo para refazer.
       </p>
       <button 
@@ -95,29 +98,30 @@
 
   <div class="exam" *ngIf="!tutorialOn && !hideExam">
     <h2>{{ stepTitle }}</h2>
-    <ion-row class="comparation">
-      <ion-col col-6>
+
+    <ion-slides pager="false">
+      <ion-slide *ngFor="let exam of examPhotos[actualStep]; let index = index;">
         <ion-card>
-          <img src="{{ examPhotos[actualExamPhoto] }}"/>
+          <img src="{{ exam.image }}"/>
+          <ion-card-content>
+            <ion-card-title>
+              {{ (index + 1) }}° Imagem
+            </ion-card-title>
+            <p>
+              {{ exam.description }}
+            </p>
+            <small>Fonte: Jorge Lincolins</small>
+          </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col col-6>
-        <ion-card (click)="choosePhoto()">
-          <img src="{{ tookPhoto ? tookPhoto : defaultPhoto }}"/>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-
+      </ion-slide>
+    </ion-slides>
+    
     <p>
-      <strong>Obs:</strong> Aperte no quadro direito para tirar uma foto, 
-      ela deve ficar parecida com a foto da esquerda. A foto não é obrigatória para comparação.
-      Mas você deve observar a mesma região da foto e os dois lados cima e baixo ou esquerda e direita.
+      <strong>Obs:</strong> Passe as fotos e siga as instruções descritas em cada uma.
     </p>
-
     <h2>
-      Responda as perguntas abaixo
+      Responda as perguntas abaixo relacionado as áreas acima
     </h2>
-
     <div class="answers">
       <div radio-group [(ngModel)]="choosedQuestions.questionOne">
         <h3>1 - Há alguma mudança na cor da pele ou mucosas?</h3>
