@@ -107,10 +107,12 @@
             <ion-card-title>
               {{ (index + 1) }}° Imagem
             </ion-card-title>
-            <p>
-              {{ exam.description }}
-            </p>
-            <small>Fonte: Jorge Lincolins</small>
+            <div class="description">
+              <p>
+                {{ exam.description }}
+              </p>
+              <small>Fonte: Jorge Lincolins</small>
+            </div>
           </ion-card-content>
         </ion-card>
       </ion-slide>
@@ -123,159 +125,238 @@
       Responda as perguntas abaixo relacionado as áreas acima
     </h2>
     <div class="answers">
-      <div radio-group [(ngModel)]="choosedQuestions.questionOne">
-        <h3>1 - Há alguma mudança na cor da pele ou mucosas?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
+      <div *ngIf="actualStep == 0">
+        <div radio-group [(ngModel)]="choosedQuestions.questionOne">
+          <h3>1 - Há alguma mudança na cor da pele ou mucosas?</h3>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Sim</ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col>
+              <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio value="0"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div radio-group [(ngModel)]="choosedQuestions.questionTwo">
+          <h3>2 - Há alguma parte endurecida?</h3>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Sim</ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col>
+              <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio value="0"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div radio-group [(ngModel)]="choosedQuestions.questionThree">
+          <h3>3 - Há algum caroço ou abcesso?</h3>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Sim</ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col>
+              <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio value="0"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div radio-group [(ngModel)]="choosedQuestions.questionFour">
+          <h3>4 - Tem alguma ferida que não cicatriza a mais de 14 dias?</h3>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Sim</ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col>
+              <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio value="0"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div radio-group [(ngModel)]="choosedQuestions.questionFive">
+          <h3>5 - Há algum inchaço?</h3>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Sim</ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col>
+              <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio value="0"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+  
+        <div radio-group [(ngModel)]="choosedQuestions.questionSix">
+          <h3>6 - Existe alguma área dormente?</h3>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Sim</ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col>
+              <ion-item>
+                <ion-label>Não</ion-label>
+                <ion-radio value="0"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
       </div>
 
-      <div radio-group [(ngModel)]="choosedQuestions.questionTwo">
-        <h3>2 - Há alguma parte endurecida?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div radio-group [(ngModel)]="choosedQuestions.questionThree">
-        <h3>3 - Há algum caroço ou abcesso?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div radio-group [(ngModel)]="choosedQuestions.questionFour">
-        <h3>4 - Tem alguma ferida que não cicatriza a mais de 14 dias?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div radio-group [(ngModel)]="choosedQuestions.questionFive">
-        <h3>5 - Há algum inchaço?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div radio-group [(ngModel)]="choosedQuestions.questionSix">
-        <h3>6 - Existe alguma área dormente?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div radio-group [(ngModel)]="choosedQuestions.questionSeven">
-        <h3>7 - Um ou mais dente(s) amolecido(s)?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div radio-group [(ngModel)]="choosedQuestions.questionEight">
-        <h3>8 - Você tem alguma dificuldade em engolir, falar ou mastigar nessa região?</h3>
-        <ion-row>
-          <ion-col>
-            <ion-item>
-              <ion-label>Sim</ion-label>
-              <ion-radio value="1"></ion-radio>
-            </ion-item>
-          </ion-col>
-
-          <ion-col>
-            <ion-item>
-              <ion-label>Não</ion-label>
-              <ion-radio value="0"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </div>
+      <div *ngIf="actualStep == 1">
+          <div radio-group [(ngModel)]="choosedQuestions.questionOne">
+            <h3>1 - Alguma ferida que não cicatriza a mais de 15 dias??</h3>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+              </ion-col>
+    
+              <ion-col>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+    
+          <div radio-group [(ngModel)]="choosedQuestions.questionTwo">
+            <h3>2 - Há alguma parte endurecida?</h3>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+              </ion-col>
+    
+              <ion-col>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+    
+          <div radio-group [(ngModel)]="choosedQuestions.questionThree">
+            <h3>3 - Algum caroço duro ou mole na língua ou na gengiva?</h3>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+              </ion-col>
+    
+              <ion-col>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+    
+          <div radio-group [(ngModel)]="choosedQuestions.questionFour">
+            <h3>4 - Algum sangramento na língua, na bochecha ou perto dos dentes que não dói?</h3>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+              </ion-col>
+    
+              <ion-col>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+    
+          <div radio-group [(ngModel)]="choosedQuestions.questionFive">
+            <h3>5 - Um ou mais dente(s) amolecido(s)?</h3>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+              </ion-col>
+    
+              <ion-col>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+    
+          <div radio-group [(ngModel)]="choosedQuestions.questionSix">
+            <h3>6 - Você tem alguma dificuldade em engolir, falar ou mastigar nessa região?</h3>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-radio value="1"></ion-radio>
+                </ion-item>
+              </ion-col>
+    
+              <ion-col>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-radio value="0"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
     </div>
-
     <button ion-button full color="{{ childColor }}" (click)="saveQuestions()">{{ buttonText }}</button>
   </div>
 </ion-content>

@@ -88,9 +88,7 @@ export class ExamPage {
     "questionThree", 
     "questionFour", 
     "questionFive", 
-    "questionSix", 
-    "questionSeven", 
-    "questionEight"
+    "questionSix"
   ];
   choosedQuestions = {
     questionOne:   "",
@@ -98,9 +96,7 @@ export class ExamPage {
     questionThree: "",
     questionFour:  "",
     questionFive:  "",
-    questionSix:   "",
-    questionSeven: "",
-    questionEight: ""
+    questionSix:   ""
   };
   savedQuestions   = [];
 
@@ -153,7 +149,7 @@ export class ExamPage {
 
   private _calculateResult() {
     let load           = this.loadCtrl.create({content: "Obtendo resultado..."});
-    let totalQuestions = 16;
+    let totalQuestions = 12;
     let yesCount       = 0;
     let calc           = 0;
     let keys           = this.questionsKeys;
@@ -189,8 +185,7 @@ export class ExamPage {
     let fields = this.choosedQuestions;
 
     if(!fields.questionOne || !fields.questionTwo || !fields.questionThree ||
-    !fields.questionFour || !fields.questionFive || !fields.questionSix ||
-    !fields.questionSeven || !fields.questionEight) {
+    !fields.questionFour || !fields.questionFive || !fields.questionSix) {
       empty = true;
     }
 
